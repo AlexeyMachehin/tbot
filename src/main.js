@@ -5,13 +5,11 @@ import { code } from "telegraf/format";
 import { ogg } from "./ogg.js";
 import { openai } from "./openai.js";
 
-console.log(config.get("TEST_ENV"));
-
 const INITIAL_SESSION = {
   messages: [],
 };
 
-const bot = new Telegraf(config.get("TELEGRAM_TOKEN")); // создание бота через библиотеку Telegraf и получение настроек
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN); // создание бота через библиотеку Telegraf и получение настроек
 
 bot.use(session());
 
