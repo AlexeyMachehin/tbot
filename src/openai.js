@@ -1,6 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
-import config from "config";
 import { createReadStream } from "fs";
+import dotenv from 'dotenv';
+dotenv.config();
 
 class OpenAi {
   roles = {
