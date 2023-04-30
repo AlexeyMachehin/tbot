@@ -1,17 +1,16 @@
 import { Telegraf, session } from "telegraf"; // библиотека
-import config from "config";
 import { message } from "telegraf/filters"; // фильтр входящих джанных в чате
 import { code } from "telegraf/format";
 import { ogg } from "./ogg.js";
 import { openai } from "./openai.js";
-
-console.log(config.get("TEST_ENV"));
+import dotenv from 'dotenv';
+dotenv.config();
 
 const INITIAL_SESSION = {
   messages: [],
 };
 
-const bot = new Telegraf(config.get("TELEGRAM_TOKEN")); // создание бота через библиотеку Telegraf и получение настроек
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN); // создание бота через библиотеку Telegraf и получение настроек
 
 bot.use(session());
 
