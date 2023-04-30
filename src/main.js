@@ -1,9 +1,10 @@
 import { Telegraf, session } from "telegraf"; // библиотека
-import config from "config";
 import { message } from "telegraf/filters"; // фильтр входящих джанных в чате
 import { code } from "telegraf/format";
 import { ogg } from "./ogg.js";
 import { openai } from "./openai.js";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const INITIAL_SESSION = {
   messages: [],
